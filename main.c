@@ -36,48 +36,11 @@ int main(int argc, char** argv)
         
         add_symbol_id = rand()%3; 
         printf("%c ", int_to_add_symbol(add_symbol_id));
+        cube_rotate(rotate_symbol_id, add_symbol_id);
     }
     printf("\n");
-   
-    // DEBUG
-    cube_rotate(BACK ,1);
-    cube_rotate(RIGHT,0);
-    cube_rotate(BACK ,0);
-    cube_rotate(RIGHT,1);
-    draw_cube_development();
-    printf("==============\n");
-    cube_rotate(BACK ,1);
-    cube_rotate(RIGHT,0);
-    cube_rotate(BACK ,0);
-    cube_rotate(RIGHT,1);
-    draw_cube_development();
-    printf("==============\n");
-    cube_rotate(BACK ,1);
-    cube_rotate(RIGHT,0);
-    cube_rotate(BACK ,0);
-    cube_rotate(RIGHT,1);
-    draw_cube_development();
-    printf("==============\n");
-    cube_rotate(BACK ,1);
-    cube_rotate(RIGHT,0);
-    cube_rotate(BACK ,0);
-    cube_rotate(RIGHT,1);
-    draw_cube_development();
-    printf("==============\n");
-    cube_rotate(BACK ,1);
-    cube_rotate(RIGHT,0);
-    cube_rotate(BACK ,0);
-    cube_rotate(RIGHT,1);
-    draw_cube_development();
-    printf("==============\n");
-    cube_rotate(BACK ,1);
-    cube_rotate(RIGHT,0);
-    cube_rotate(BACK ,0);
-    cube_rotate(RIGHT,1);
-    draw_cube_development();
-    printf("==============\n");
 
-    
+    draw_cube_development(); 
     return 0;
 }
 

@@ -9,7 +9,7 @@
 #define LEFT 5
 
 
-static char rotate_symbol[6] = {'U','D','B','F','B','L'};
+static char rotate_symbol[6] = {'U','D','B','F','R','L'};
 char int_to_rotate_symbol(int i) {
     return rotate_symbol[i];
 }
