@@ -48,9 +48,9 @@ static int rotate_list[6][5][4][3] = {
         {{DOWN ,1,0},{DOWN ,2,1},{DOWN ,1,2},{DOWN ,0,1}}
     },
     { // B
-        {{FRONT,0,2},{DOWN ,0,2},{BACK ,2,0},{UP   ,0,2}},
-        {{FRONT,1,2},{DOWN ,1,2},{BACK ,1,0},{UP   ,1,2}},
-        {{FRONT,2,2},{DOWN ,2,2},{BACK ,0,0},{UP   ,2,2}},
+        {{UP   ,0,0},{RIGHT,0,2},{DOWN ,2,2},{LEFT ,2,0}},
+        {{UP   ,0,1},{RIGHT,1,2},{DOWN ,2,1},{LEFT ,1,0}},
+        {{UP   ,0,2},{RIGHT,2,2},{DOWN ,2,0},{LEFT ,0,0}},
         {{BACK ,0,0},{BACK ,2,0},{BACK ,2,2},{BACK ,0,2}},
         {{BACK ,1,0},{BACK ,2,1},{BACK ,1,2},{BACK ,0,1}}
     },
