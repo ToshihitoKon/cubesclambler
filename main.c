@@ -40,24 +40,29 @@ int main(int argc, char** argv)
     printf("\n");
    
     // DEBUG
-    cube_rotate(1,1);
-    cube_rotate(2,1);
-    cube_rotate(1,0);
+    cube_rotate(FRONT,0);
+    cube_rotate(RIGHT,0);
+    cube_rotate(UP,1);
+    cube_rotate(RIGHT,1);
     draw_cube_development();
     printf("==============\n");
-    cube_rotate(1,1);
-    cube_rotate(2,1);
-    cube_rotate(1,0);
+    cube_rotate(UP,1);
+    cube_rotate(RIGHT,0);
+    cube_rotate(UP,0);
+    cube_rotate(RIGHT,1);
+    cube_rotate(FRONT,1);
     draw_cube_development();
     printf("==============\n");
-    cube_rotate(1,1);
-    cube_rotate(2,1);
-    cube_rotate(1,0);
+    cube_rotate(RIGHT,0);
+    cube_rotate(UP,0);
+    cube_rotate(RIGHT,1);
+    cube_rotate(UP,1);
     draw_cube_development();
     printf("==============\n");
-    cube_rotate(1,1);
-    cube_rotate(2,1);
-    cube_rotate(1,0);
+    cube_rotate(RIGHT,1);
+    cube_rotate(FRONT,0);
+    cube_rotate(RIGHT,0);
+    cube_rotate(FRONT,1);
     draw_cube_development();
     printf("==============\n");
 
