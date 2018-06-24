@@ -40,25 +40,26 @@ int main(int argc, char** argv)
     printf("\n");
    
     // DEBUG
-    cube_rotate(0,0);
-    cube_rotate(2,0);
-    cube_rotate(0,1);
+    cube_rotate(1,1);
+    cube_rotate(2,1);
+    cube_rotate(1,0);
     draw_cube_development();
     printf("==============\n");
-    cube_rotate(0,0);
-    cube_rotate(2,0);
-    cube_rotate(0,1);
+    cube_rotate(1,1);
+    cube_rotate(2,1);
+    cube_rotate(1,0);
     draw_cube_development();
     printf("==============\n");
-    cube_rotate(0,0);
-    cube_rotate(2,0);
-    cube_rotate(0,1);
+    cube_rotate(1,1);
+    cube_rotate(2,1);
+    cube_rotate(1,0);
     draw_cube_development();
     printf("==============\n");
-    cube_rotate(0,0);
-    cube_rotate(2,0);
-    cube_rotate(0,1);
+    cube_rotate(1,1);
+    cube_rotate(2,1);
+    cube_rotate(1,0);
     draw_cube_development();
+    printf("==============\n");
 
     
     return 0;
@@ -141,6 +142,14 @@ void four_cube_rotate(int val[4][3], int add_symbol_id)
         *int_array_to_cube_position_p(val[2]) = *int_array_to_cube_position_p(val[1]);
         *int_array_to_cube_position_p(val[1]) = *int_array_to_cube_position_p(val[0]);
         *int_array_to_cube_position_p(val[0]) = swap;
+        break;
+    case 2:
+        swap = *int_array_to_cube_position_p(val[0]);
+        *int_array_to_cube_position_p(val[0]) = *int_array_to_cube_position_p(val[2]);
+        *int_array_to_cube_position_p(val[2]) = swap;
+        swap = *int_array_to_cube_position_p(val[1]);
+        *int_array_to_cube_position_p(val[1]) = *int_array_to_cube_position_p(val[3]);
+        *int_array_to_cube_position_p(val[3]) = swap;
         break;
     }
 }
