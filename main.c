@@ -35,7 +35,8 @@ int main(int argc, char** argv)
         history[i%2] = rotate_symbol_id;
         
         add_symbol_id = rand()%3; 
-        printf("%c ", int_to_add_symbol(add_symbol_id));
+        if(add_symbol_id != 0) printf("%c", int_to_add_symbol(add_symbol_id));
+        printf(" ");
         cube_rotate(rotate_symbol_id, add_symbol_id);
     }
     printf("\n");
