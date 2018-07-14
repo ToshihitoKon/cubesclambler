@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdbool.h>
+#include <unistd.h>
 #include <limits.h>
 #include <time.h>
 
@@ -18,10 +19,37 @@ int cube[6][3][3] = {
 bool int_in_array(int*, int, int);
 void cube_rotate(int, int);
 void draw_cube_development();
+
 int main(int argc, char** argv)
 {
+    // mode flags
+    bool mode_CN = false;
+    bool mode_print_scramble_dev = true;
+
+    // default scramble length
     int scramble_length = 25;
-    if(argc != 1) scramble_length = atoi(argv[1]);
+    
+    // set options
+    // opterr = 0; // Invalidate getopt error message
+    
+    int opt;
+    while ((opt = getopt(argc, argv, "cnl:")) != -1){
+        switch (opt){
+        case 'c': // Suggest cross color practices for Corot Natural
+            mode_CN = true;
+            break;
+        case 'n': // No print cube development mode
+            mode_print_scramble_dev = false;
+            break;
+        case 'l' : // using not default scramble length
+            scramble_length = atoi(optarg);
+            break;
+        default: // not support option
+            printf ("Usase: %s [-c] [-n] [-l scramble_length]\n", argv[0]);
+            return 0;
+        }
+    }
+    
     int history[2]={INT_MAX,INT_MAX};
     int rotate_symbol_id;
     int add_symbol_id;
