@@ -55,6 +55,10 @@ int main(int argc, char** argv)
     int add_symbol_id;
     srand((unsigned)time(NULL));
     
+    // print cross color suggest
+    if (mode_CN)
+        printf ("This time your cross color is %s\n", color_name[rand()%6]);
+
     for(int i=0;i<scramble_length;i++){
         do {
             rotate_symbol_id = rand()%6;
@@ -69,7 +73,8 @@ int main(int argc, char** argv)
     }
     printf("\n");
 
-    draw_cube_development(); 
+    if (mode_print_scramble_dev)
+        draw_cube_development(); 
     return 0;
 }
 

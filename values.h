@@ -8,6 +8,14 @@
 #define RIGHT 4
 #define LEFT 5
 
+static char* color_name[6] = {
+        "\x1b[30;47m White \x1b[0m",
+        "\x1b[43m Yellow \x1b[0m",
+        "\x1b[44m Blue \x1b[0m",
+        "\x1b[42m Green \x1b[0m",
+        "\x1b[41m Red \x1b[0m",
+        "\x1b[45m Orange \x1b[0m"
+    };
 
 static char rotate_symbol[6] = {'U','D','B','F','R','L'};
 char int_to_rotate_symbol(int i) {
