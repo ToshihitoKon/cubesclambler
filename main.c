@@ -4,6 +4,7 @@
 #include <unistd.h>
 #include <limits.h>
 #include <time.h>
+#include <sys/time.h>
 
 #include "values.h"
 
@@ -53,7 +54,10 @@ int main(int argc, char** argv)
     int history[2]={INT_MAX,INT_MAX};
     int rotate_symbol_id;
     int add_symbol_id;
-    srand((unsigned)time(NULL));
+
+    struct timeval now;
+    gettimeofday(&now, NULL);
+    srand(now.tv_usec);
     
     // print cross color suggest
     if (mode_CN)
