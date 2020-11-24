@@ -26,6 +26,7 @@ int main(int argc, char** argv)
     // mode flags
     bool mode_CN = false;
     bool mode_print_scramble_dev = true;
+    bool mode_no_space = false;
 
     // default scramble length
     int scramble_length = 25;
@@ -34,7 +35,7 @@ int main(int argc, char** argv)
     // opterr = 0; // Invalidate getopt error message
     
     int opt;
-    while ((opt = getopt(argc, argv, "cnl:")) != -1){
+    while ((opt = getopt(argc, argv, "cnl:s")) != -1){
         switch (opt){
         case 'c': // Suggest cross color practices for Corot Natural
             mode_CN = true;
@@ -44,6 +45,9 @@ int main(int argc, char** argv)
             break;
         case 'l' : // using not default scramble length
             scramble_length = atoi(optarg);
+            break;
+        case 's' : // no space mode
+            mode_no_space = true;
             break;
         default: // not support option
             printf ("Usase: %s [-c] [-n] [-l scramble_length]\n", argv[0]);
@@ -72,7 +76,7 @@ int main(int argc, char** argv)
         
         add_symbol_id = rand()%3; 
         if(add_symbol_id != 0) printf("%c", int_to_add_symbol(add_symbol_id));
-        printf(" ");
+        if(!mode_no_space) printf(" ");
         cube_rotate(rotate_symbol_id, add_symbol_id);
     }
     printf("\n");
